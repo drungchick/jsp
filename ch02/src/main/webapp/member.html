@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="common.css">
+<script type="text/javascript">
+	function chk() {
+		if (frm.password.value != frm.confirmPass.value) {
+			alert('비밀번호가 일치하지 않습니다.');
+			frm.password.focus();	// 커서를 password에 갖다 놔라.
+			frm.password.value="";	// 현재 입력한 내용을 지워라.
+			return false;			// submit 명령을 취소해라.
+		}
+		/* if (frm.job.value == "") {  아래랑 같다. */
+		if (!frm.job.value) {
+			alert('직업을 선택해주세요.');
+			frm.job.focus();
+			return false;
+		}
+	}	// onsubmit submit할 때 chk()함수를 실행하고 결과를 확인하여 action 실행을 결정.
+</script>
+</head>
+<body>
+	<form action="Member" method="post" name="frm" onsubmit="return chk()">
+		<table>
+			<caption>회원 가입</caption>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name" required="required" autofocus="autofocus">
+				</td>
+			</tr>
+			<tr>
+				<th>아이디</th>
+				<td>
+					<input type="text" name="id" required="required">
+				</td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td>
+					<input type="password" name="password" required="required">
+				</td>
+			</tr>
+			<tr>
+				<th>비밀번호 확인</th>
+				<td>
+					<input type="password" name="confirmPass" required="required">
+				</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<label for="g1">여자</label>
+					<input type="radio" name="gender" value="여자" id="g1" checked="checked"><br>
+					<label for="g2">남자</label>
+					<input type="radio" name="gender"  value="남자" id="g2">
+				</td>
+			</tr>
+			<tr>
+				<th>메일 수신</th>
+				<td>
+					<label for="em1">공지</label>
+					<input type="checkbox" name="email" value="공지" id="em1"><p>
+					<label for="em2">광고</label>
+					<input type="checkbox" name="email" value="광고" id="em2"><p>
+					<label for="em3">배송정보</label>
+					<input type="checkbox" name="email" value="배송정보" id="em3">
+				</td>
+			</tr>
+			<tr>
+				<th>직업</th>
+				<td>
+					<select name="job">
+					    <option value="">직업선택</option>
+					    <option value="회사원">회사원</option>
+					    <option value="학생">학생</option>
+					    <option value="기타">기타</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+			<th colspan="2">
+				<input type="submit" value="확인">
+				<input type="reset" value="초기화">
+			</th>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>

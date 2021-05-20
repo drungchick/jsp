@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+@import url("common.css");
+</style>
+</head>
+<body>
+	<form action="Num"><!-- 폼 안의 내용을 어딘가로 넘긴다. -->
+		<table>
+			<caption>누적 합계</caption>
+			<!-- "autofocus" : 처음에 커서위치 -->
+			<!-- required 데이터가 입력 된 후에 화면을 넘어가라 -->
+			<tr>
+				<th>숫자 입력</th>
+				<td><input type="number" name="num" min="10" max="100"
+					autofocus="autofocus" required="required"></td>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="확인"></th>
+				<!-- submit 제출하다 -->
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
